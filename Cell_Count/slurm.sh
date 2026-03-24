@@ -9,17 +9,13 @@
 #SBATCH --mem-per-cpu=2000
 
 
-source /home/ed488/anaconda3/bin/activate
+source /home/ed488/miniconda3/bin/activate
 
-conda activate cellpose-env
+conda activate cellpose
 
-export LD_LIBRARY_PATH=/home/ed488/anaconda3/envs/cellpose-env/lib/python3.9/site-packages/nvidia/nvjitlink/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/ed488/miniconda3/envs/cellpose/lib/python3.9/site-packages/nvidia/nvjitlink/lib:$LD_LIBRARY_PATH
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
-
-#module load cuda/12.1
-
-echo 'module loaded'
 
 rm -rf ~/.cache/matplotlib
 
